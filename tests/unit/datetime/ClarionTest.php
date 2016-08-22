@@ -24,7 +24,7 @@ class ClarionTest extends \PHPUnit_Framework_TestCase
         $date = Clarion::getReferenceDate();
         self::assertSame("1800-12-28 00:00:00", $date->format('Y-m-d H:i:s'));
         $date->modify("+1 day");
-        self::assertSame("1800-12-28 00:00:00", $date->format('Y-m-d H:i:s'));
+        self::assertSame("1800-12-28 00:00:00", Clarion::getReferenceDate()->format('Y-m-d H:i:s'));
     }
 
     /**

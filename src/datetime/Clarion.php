@@ -20,7 +20,7 @@ namespace org\majkel\toolbox\datetime;
  */
 final class Clarion
 {
-    /** @var \DateTimeImmutable */
+    /** @var \DateTime */
     private static $refDate;
 
     /**
@@ -33,14 +33,15 @@ final class Clarion
     }
 
     /**
-     * @return \DateTimeImmutable Returns date object containing value `1800-12-28 00:00:00`
+     * @return \DateTime Returns date object containing value `1800-12-28 00:00:00`
      */
     public static function getReferenceDate()
     {
         if (is_null(self::$refDate)) {
-            self::$refDate = (new \DateTimeImmutable())->setDate(1800, 12, 28)->setTime(0, 0, 0);
+            self::$refDate = new \DateTime();
+            self::$refDate->setDate(1800, 12, 28)->setTime(0, 0, 0);
         }
-        return self::$refDate;
+        return clone self::$refDate;
     }
 
     /**

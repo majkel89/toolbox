@@ -24,7 +24,7 @@ class ComarchTest extends \PHPUnit_Framework_TestCase
         $date = Comarch::getReferenceDate();
         self::assertSame("1990-01-01 00:00:00", $date->format('Y-m-d H:i:s'));
         $date->modify("+1 day");
-        self::assertSame("1990-01-01 00:00:00", $date->format('Y-m-d H:i:s'));
+        self::assertSame("1990-01-01 00:00:00", Comarch::getReferenceDate()->format('Y-m-d H:i:s'));
     }
 
     /**
